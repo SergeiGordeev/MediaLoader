@@ -1,12 +1,12 @@
 package driver;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-class InternetExplorerWebDriver implements BrowserWebDriver
+class InternetExplorerWebDriver implements BrowserDriver
 {
-    public RemoteWebDriver getWebDriver() {
-        System.setProperty("webdriver.chrome.driver", DriversPathConstants.INTERNET_EXPLORER_WEB_DRIVER_LOCAL_PATH);
-        return new ChromeDriver();
+    public RemoteWebDriver getDriver() {
+        System.setProperty("webdriver.ie.driver", DriversPathConstants.INTERNET_EXPLORER_WEB_DRIVER_LOCAL_PATH);
+        return new InternetExplorerDriver();
     }
 }

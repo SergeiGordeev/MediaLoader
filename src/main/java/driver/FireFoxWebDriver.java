@@ -1,12 +1,12 @@
 package driver;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class FireFoxWebDriver implements BrowserWebDriver {
+class FireFoxWebDriver implements BrowserDriver {
 
-    public RemoteWebDriver getWebDriver() {
-        System.setProperty("webdriver.chrome.driver", DriversPathConstants.FIRE_FOX_WEB_DRIVER_LOCAL_PATH);
-        return new ChromeDriver();
+    public RemoteWebDriver getDriver() {
+        System.setProperty("webdriver.gecko.driver", DriversPathConstants.FIRE_FOX_WEB_DRIVER_LOCAL_PATH);
+        return new FirefoxDriver();
     }
 }

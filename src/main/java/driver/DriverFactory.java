@@ -6,17 +6,14 @@ public class DriverFactory {
 
     public RemoteWebDriver getDriver(Driver driver)
     {
-        if(driver.equals(Driver.CHROME))
+        switch (driver)
         {
-            return new ChromeWebDriver().getWebDriver();
-        }
-        if(driver.equals(Driver.FIREFOX))
-        {
-            return new FireFoxWebDriver().getWebDriver();
-        }
-        if(driver.equals(Driver.INTERNET_EXPLORER))
-        {
-            return new InternetExplorerWebDriver().getWebDriver();
+            case CHROME:
+                return new ChromeWebDriver().getWebDriver();
+            case FIREFOX:
+                return new FireFoxWebDriver().getWebDriver();
+            case INTERNET_EXPLORER:
+                return new InternetExplorerWebDriver().getWebDriver();
         }
         return null;
     }

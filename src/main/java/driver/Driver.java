@@ -2,5 +2,6 @@ package driver;
 
 public enum Driver {
     CHROME,
-    FIREFOX
+    FIREFOX,
+    INTERNET_EXPLORER
 }

@@ -14,6 +14,10 @@ public class DriverFactory {
         {
             return new FireFoxWebDriver().getWebDriver();
         }
+        if(driver.equals(Driver.INTERNET_EXPLORER))
+        {
+            return new InternetExplorerWebDriver().getWebDriver();
+        }
         return null;
     }
 }

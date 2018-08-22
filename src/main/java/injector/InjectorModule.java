@@ -1,12 +1,16 @@
-package driver;
+package injector;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
-import driver.annotations.Chrome;
-import driver.annotations.FireFox;
-import driver.annotations.InternetExplorer;
+import driver.BrowserDriver;
+import driver.ChromeWebDriver;
+import driver.FireFoxWebDriver;
+import driver.InternetExplorerWebDriver;
+import injector.annotations.Chrome;
+import injector.annotations.FireFox;
+import injector.annotations.InternetExplorer;
 
-public class DriverModule extends AbstractModule {
+public class InjectorModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(BrowserDriver.class).annotatedWith(Chrome.class).to(ChromeWebDriver.class).in(Singleton.class);

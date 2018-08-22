@@ -1,4 +1,4 @@
-package driver.annotations;
+package injector.annotations;
 
 import com.google.inject.BindingAnnotation;
 
@@ -10,4 +10,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @BindingAnnotation
-public @interface FireFox {}
+public @interface InternetExplorer {}

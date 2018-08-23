@@ -7,4 +7,7 @@ public class Constants {
     //TODO: set correct driver for below paths from https://www.seleniumhq.org/download/
     public static final String INTERNET_EXPLORER_WEB_DRIVER_LOCAL_PATH = "src\\main\\resources\\IEDriverServer.exe";
     public static final String DOMAIN_PATH = "https://www.ivi.ru/";
+
+    public static final String JPG = "jpg";
+    public static final String DOWNLOADED_IMAGES_LOCAL_PATH = "C:\\Users\\sego1115\\Downloads\\DownloadedImages\\";
 }

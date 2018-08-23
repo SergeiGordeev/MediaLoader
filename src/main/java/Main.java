@@ -5,6 +5,7 @@ import driver.BrowserDriver;
 import injector.InjectorModule;
 import injector.annotations.Chrome;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import utils.Constants;
@@ -17,7 +18,6 @@ public class Main
     @Chrome
     private BrowserDriver chrome;
     private static RemoteWebDriver driver;
-    public static String oldAlt = null;
 
 
     public static void main(String[] args) {
@@ -26,6 +26,7 @@ public class Main
         Main mainInstance = injector.getInstance(Main.class);
 
         driver = mainInstance.chrome.getDriver();
+        driver.manage().window().setPosition(new Point(0, 950));
         driver.get(Constants.DOMAIN_PATH);
         firstTest();
         driver.quit();
@@ -33,20 +34,10 @@ public class Main
 
     public static void firstTest()
     {
-        WebElement postersBlockElement  = driver.findElement(By.xpath("//div[@class='viewport']/ul"));
-        List<WebElement> liElements  = postersBlockElement.findElements(By.tagName("li"));
-        for(WebElement li : liElements)
+        List<WebElement> imgElementsList  = driver.findElements(By.xpath("//li[@class='  js-content-li']/a/span/img"));
+        for(WebElement img : imgElementsList)
         {
-            String newAlt = li.findElement(By.xpath("//span[@class='image']/img")).getAttribute("alt");
-
-            if(oldAlt == newAlt)
-            {
-                return;
-            }
-            else {
-                oldAlt = newAlt;
-                System.out.println(newAlt);
-            }
+            System.out.println(img.getAttribute("alt"));
         }
     }
 }
